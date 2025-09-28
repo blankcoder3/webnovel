@@ -73,5 +73,49 @@
     <div class="copyright">&copy; 2024</div>
 
     <script src="../chapter-script.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const prevLink = document.getElementById("prev-chapter-link");
+        const nextLink = document.getElementById("next-chapter-link");
+    
+        const folder = "vol1/"; // your chapter folder
+    
+        // Get current chapter number from URL
+        const currentFile = window.location.pathname.split("/").pop(); // e.g., "0003.html"
+        const currentNum = parseInt(currentFile.split(".")[0], 10);
+    
+        const formatChapter = (num) => folder + num.toString().padStart(4, "0") + ".html";
+    
+        // Previous chapter logic
+        if (currentNum > 1) {
+            const prevChapter = formatChapter(currentNum - 1);
+            fetch(prevChapter, { method: 'HEAD' })
+                .then(res => {
+                    if (res.ok) prevLink.href = prevChapter;
+                    else disableLink(prevLink);
+                })
+                .catch(() => disableLink(prevLink));
+        } else {
+            // Chapter 1: disable previous link
+            disableLink(prevLink);
+        }
+    
+        // Next chapter logic
+        const nextChapter = formatChapter(currentNum + 1);
+        fetch(nextChapter, { method: 'HEAD' })
+            .then(res => {
+                if (res.ok) nextLink.href = nextChapter;
+                else disableLink(nextLink);
+            })
+            .catch(() => disableLink(nextLink));
+    
+        function disableLink(link) {
+            link.style.pointerEvents = "none";
+            link.style.opacity = 0.5;
+            link.style.cursor = "default";
+        }
+    });
+    </script>
+
 </body>
 </html>
