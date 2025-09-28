@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novel</title>
+    <meta name="description" content="A clean, minimalist blog template built with modern web standards.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Radley:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="blog-title">
+            <h1><a href="#" id="home-link">Novel.</a></h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Home Page Content -->
+            <section id="home-page" class="page-content">
+                <div class="post-list" id="latest-chapters">
+                    <div class="coming-soon" id="coming-soon-message" style="display: none;">
+                        <h2 class="coming-soon-text">Coming Soon</h2>
+                        <p class="coming-soon-description">New chapters will appear here as they are published.</p>
+                    </div>
+                </div>
+                <div class="pagination" id="see-more-button" style="display: none;">
+                    <a href="#" data-page="chapters" aria-label="See more chapters">
+                        <span>See More Chapters</span>
+                        <span aria-hidden="true">▼</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- All Chapters Page -->
+            <section id="chapters-page" class="page-content" style="display: none;">
+                <h1>All Chapters</h1>
+                <div class="chapters-grid" id="all-chapters"></div>
+                <div class="back-navigation">
+                    <a href="#" data-page="home" class="back-link">← Back to Latest</a>
+                </div>
+            </section>
+
+            <!-- Post Page Content -->
+            <section id="post-page" class="page-content post-content" style="display: none;">
+                <article>
+                    <h1 id="post-title">Styling</h1>
+                    <p class="post-meta" id="post-meta">01 June 2016</p>
+                    <div id="post-body">
+                        <!-- Sample content here -->
+                    </div>
+                    <div class="author-box">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjUiIGN5PSIyNSIgcj0iMjUiIGZpbGw9IiNFM0UzRTMiLz4KPHN2ZyB4PSI1IiB5PSI1IiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJDMTMuMSAyIDE0IDIuOSAxNCA0QzE0IDUuMSAxMy4xIDYgMTIgNkMxMC45IDYgMTAgNS4xIDEwIDRDMTAgMi45IDEwLjkgMiAxMiAyWk0yMSAyMkgxOUMxOS41IDIwLjggMTkuNSAyMC4zIDE4IDE3QzE3IDEzLjggMTUuNSA5IDEyIDlTNyAxMy44IDYgMTdDNC41IDIwLjMgNC41IDIwLjggNSAyMkgzQzMuNSAyMC4zIDMuNSAxOSA1IDE2QzYgMTIgOC41IDcgMTIgN1MxOCAxMiAxOSAxNkMyMC41IDE5IDIwLjUgMjAuMyAyMSAyMloiIGZpbGw9IiM3Njc2NzYiLz4KPC9zdmc+Cjwvc3ZnPgo=" alt="Author Avatar">
+                    </div>
+                    <nav class="post-nav">
+                        <div class="post-nav-item">
+                            <strong>Prev</strong>
+                            <a href="#" data-page="home">Beautiful</a>
+                        </div>
+                        <div class="post-nav-item next">
+                            <a href="#" data-page="home">Webpage</a>
+                            <strong>Next</strong>
+                        </div>
+                    </nav>
+                </article>
+            </section>
+
+            <!-- Other pages continue... -->
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="description">Blog description goes here.</div>
+        <nav>
+            <a href="#" data-page="home">Home</a>
+            <a href="#" data-page="about">About</a>
+            <a href="#" data-page="contact">Contact</a>
+            <a href="#" data-page="error">404 page</a>
+        </nav>
+    </footer>
+
+    <div class="copyright">&copy; 2024</div>
+    
+    <script src="./script.js"></script>
+</body>
+</html>
